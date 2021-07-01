@@ -7,6 +7,7 @@ const weatherFetch = require('./utils/weatherFetch');
 // console.log(__dirname);
 // console.log(path.join(__dirname, '../public'));
 const app = express();
+const port = process.env.PORT || 3000;
 
 //define path for express config 
 // console.log(__dirname);
@@ -109,6 +110,6 @@ app.get('*', (req, res) => {
   })
 });
 
-app.listen(3000, () => {
-  console.log("server is up on port 3000")
+app.listen(port, () => {
+  console.log("server is up on " + port)
 });
