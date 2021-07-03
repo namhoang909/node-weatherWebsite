@@ -47,12 +47,13 @@ app.get('/weather', ( req, res ) => {
           observation_time: time,
           temperature,
           feelslike: feelTemp,
-          weather_descriptions: forecast
+          weather_descriptions: forecast,
+          humidity
         } = current;
         res.send({
           address,
           location: { locationName, country },
-          forecast: `At ${time}, it is ${forecast}, temperature is ${temperature} feels like ${feelTemp}`,
+          forecast: `At ${time}, it is ${forecast}, temperature is ${temperature} feels like ${feelTemp}. Humidity is ${humidity}%.`,
         });
       });
     });

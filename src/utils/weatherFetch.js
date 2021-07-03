@@ -28,6 +28,7 @@ const weatherInfo = (latitude, longitude, callback) => {
           country: location.country,
         },
         current: {
+          humidity: current.humidity,
           observation_time: current.observation_time,
           temperature: `${current.temperature}`,
           feelslike: `${current.feelslike}`,
