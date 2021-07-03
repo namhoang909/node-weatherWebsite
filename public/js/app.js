@@ -17,18 +17,18 @@ weatherForm.addEventListener('submit', (event) => {
   const location = search.value;
   locationMessage.textContent = "Loading";
   forecastMessage.textContent = "";
-  fetch('/weather?address=' + location).then((response) => {
-  response.json().then((data) => {
-    if(data.error) {
-      locationMessage.textContent = data.error;
-    } else {
-      const { location, forecast } = data;
-      const { locationName, country } = location
-      console.log(location);
-      locationMessage.innerHTML = `Location name: ${locationName}, country: ${country}.`;
-      console.log(forecast);
-      forecastMessage.textContent = forecast;
-    }
-  })
-});
+  fetch("/weather?address=" + location).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        locationMessage.textContent = data.error;
+      } else {
+        const { location, forecast } = data;
+        const { locationName, country } = location;
+        console.log(location);
+        locationMessage.innerHTML = `Location name: ${locationName}, country: ${country}.`;
+        console.log(forecast);
+        forecastMessage.textContent = forecast;
+      };
+    });
+  });
 })

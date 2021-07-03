@@ -51,7 +51,7 @@ app.get('/weather', ( req, res ) => {
         } = current;
         res.send({
           address,
-          location: {locationName, country},
+          location: { locationName, country },
           forecast: `At ${time}, it is ${forecast}, temperature is ${temperature} feels like ${feelTemp}`,
         });
       });
