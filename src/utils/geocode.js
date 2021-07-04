@@ -20,7 +20,7 @@ const request = require('request');
 const geocode = ( address, callback ) => {
   const mapUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + encodeURIComponent(address) + ".json?access_token=pk.eyJ1IjoibmFtaG9hbmc5MDkiLCJhIjoiY2twdzF2dGZ0MW1tNDJwcXZvOTI0MHBpciJ9.VQqMTFO7xUca0jk1hQHKRg";
 
-  request({url: mapUrl, json: true}, (error, { body }) => {
+  request({url: mapUrl, json: true}, (error, { body } = {}) => {
     if (error) {
       callback('Unable to connect to location service!', undefined);
     } else if (body.message) {
